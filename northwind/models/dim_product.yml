@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: Transaction fact table. One row per line item ordered. Includes product data
+    columns:
+      - name: productkey
+        description: surrogate Key of the product
+        tests:
+            - unique
+            - not_null
+      - name: productid
+        description: primary key of the source systems (business key)
+        tests:
+            - unique
+            - not_null
+      - name: productname
+        description: name of the product
+      - name: supplierkey
+        description: Dimension key for dim_supplier
+      - name: categoryname
+        description: product category name
+      - name: categorydescription
+        description: product category description
